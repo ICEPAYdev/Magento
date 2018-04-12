@@ -41,7 +41,15 @@ class Icepay_IceAdvanced_Adminhtml_Iceadvanced_AjaxController extends Mage_Admin
 
     public function get_paymentmethodsAction()
     {
-        $this->getResponse()->setBody(Zend_Json::encode($this->iceWebservice()->retrieveAdminGrid($this->getRequest()->get("store"))));
+        $storeId = $this->getRequest()->get("store");
+
+        //Quick bugfix
+        //TODO: check if store ID is really sent in the request
+        if (!$storeId) {
+            $storeId = $this->getRequest()->get("scope");   
+        }
+
+        $this->getResponse()->setBody(Zend_Json::encode($this->iceWebservice()->retrieveAdminGrid($storeId)));
     }
 
     public function save_paymentmethodAction()

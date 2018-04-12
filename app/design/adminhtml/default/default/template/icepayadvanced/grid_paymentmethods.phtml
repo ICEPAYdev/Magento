@@ -143,7 +143,9 @@
                 },
                 retrieveFromICEPAY: function() {
                     var url = '<?php echo $this->_ajaxGetPaymentMethodsURL ?>';
-                    var parameters = {};
+                    var parameters = {
+                        scope: <?php echo $this->_scope ?>
+                    };
                     new Ajax.Request(url, {
                         parameters: parameters,
                         onComplete: function(response) {
