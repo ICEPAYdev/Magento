@@ -243,18 +243,25 @@ class Icepay_IceAdvanced_Model_Checkout_Standard extends Mage_Payment_Model_Meth
         return $filtered_issuers;
     }
 
-    public function filterByAmountForCountry($issuers, $country)
+    private function filterByAmountForCountry($issuers, $country)
     {
-        $grandTotal = Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
+        //Do not use ->getQuote() here. getQuote() is causing an infinite loop when trigger_recollect = 1 and OneStepCheckout extension is installed.
+        //$grandTotal = Mage::getModel('checkout/cart')->getQuote()->getGrandTotal();
+
+        //Order is being created from admin
+        if(!isset($this->_quote)) {
+            return $issuers;
+        }
+
+        $grandTotal = $this->_quote->getGrandTotal();
 
         // Order is being created from admin
         if (is_null($grandTotal)) {
             return $issuers;
         }
 
-        $grandTotal = $grandTotal * 100;
-
         $filtered_issuers = array();
+        $grandTotal = $grandTotal * 100;
 
         foreach ($issuers as $key => $issuer) {
             $issuerMinimum = unserialize($issuer['issuer_minimum']);
