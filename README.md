@@ -2,7 +2,7 @@
 
 ## Magento Payment Module
 
-All online payment methods for your Magento webshop in one go! Make it possible for customers to pay in your Magento webshop. Download the Magento Advanced webshop module [here](https://github.com/ICEPAY/Magento/releases) and gain access to the most popular national and international online payment methods.
+All online payment methods for your Magento webshop in one go! Make it possible for customers to pay in your Magento webshop. Download the Magento Advanced webshop module [here](https://github.com/ICEPAY/Magento/releases) and gain access to the most popular national and international online payment methods. Installation and configuration instruction is available from https://github.com/ICEPAY/Magento/wiki
 
 The master branche may not be stable. See the [release list](https://github.com/ICEPAY/Magento/releases) for stable version of this module. Use [Magento Connect](http://www.magentocommerce.com/magento-connect/icepay-payment-advanced.html) for mainstream updates.
 
