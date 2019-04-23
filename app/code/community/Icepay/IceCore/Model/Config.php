@@ -22,6 +22,7 @@ class Icepay_IceCore_Model_Config
     const AUTOINVOICE = "icecore/core_options/order_autoinvoice";
     const AUTOREFUND = "icecore/core_options/order_autorefund";
     const OVERRIDEREDIRECTURLS 	= "icecore/core_options/override_redirect_urls";
+    const USEBASECURRENCY 	= "icecore/core_options/use_base_currency";
 
     const STATUS_NEW = "NEW";
     const STATUS_OPEN = "OPEN";

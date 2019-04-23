@@ -140,10 +140,23 @@ class Icepay_IceCore_Model_Mysql4_IceCore extends Mage_Core_Model_Mysql4_Abstrac
         if ($country == "00")
             $country = $order->getBillingAddress()->getCountryId();
 
+
+        if( Mage::getStoreConfig(Icepay_IceCore_Model_Config::USEBASECURRENCY, $order->getStore()->getId()))
+        {
+            $amount = $order->getBaseGrandTotal();
+            $currency = $order->getBaseCurrencyCode();
+        }
+        else
+        {
+            $amount = $order->getGrandTotal();
+            $currency = $order->getOrderCurrencyCode();
+        }
+
+
         $ice_payment = array(
             'ic_merchantid' => Mage::helper('icecore')->getMerchantIDForStore($order->getStore()->getId()),
-            'ic_currency' => $order->getOrderCurrencyCode(),
-            'ic_amount' => Mage::helper('icecore')->formatTotal($order->getGrandTotal()),
+            'ic_currency' => $currency,
+            'ic_amount' => Mage::helper('icecore')->formatTotal($amount),
             'ic_description' => Mage::helper('icecore')->getTransactionDescription($order->getRealOrderId()),
             'ic_country' => $country,
             'ic_language' => Mage::helper("icecore")->getLangISO2(),

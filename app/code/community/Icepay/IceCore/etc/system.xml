@@ -183,6 +183,16 @@
                             <show_in_website>0</show_in_website>
                             <show_in_store>1</show_in_store>
                         </override_redirect_urls>
+                        <use_base_currency translate="label">
+                            <label>Use Base Currency</label>
+                            <comment>Use Base Currency for Online Payment Transactions.</comment>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>50</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </use_base_currency>
                     </fields>
                 </core_options>
             </groups>
