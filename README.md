@@ -1,5 +1,7 @@
 ![]( https://icepay.com/app/themes/icepay/dist/images/logos/logo_icepay.svg)
 
+NOTE: PLEASE USE THE NEW API PLUGINS ON https://www.sellxed.com/shop/en/eur/extensions/module/payment-service-provider/icepay.html, WITH THE OLD API NOT ALL PAYMENT METHODS ARE SUPPORTED
+
 ## Magento Payment Module
 
 All online payment methods for your Magento webshop in one go! Make it possible for customers to pay in your Magento webshop. Download the Magento Advanced webshop module [here](https://github.com/ICEPAY/Magento/releases) and gain access to the most popular national and international online payment methods. A detailed installation and configuration instruction is available [here](https://github.com/ICEPAY/Magento/wiki).
